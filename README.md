@@ -1,13 +1,13 @@
 # Javascript, express 를 활용한 간단한 웹 게임 페이지
 
-1. node.js / mysql 설치
+###1. node.js / mysql 설치
 
 cmd - cd (download path)
 npm i express
 npm i express-session
 npm i mysql
 
-2. Database 초기 세팅
+###2. Database 초기 세팅
 
 cmd - cd (mysql install path)
 
@@ -30,4 +30,4 @@ CREATE TABLE users (
     score INT DEFAULT 0
 ); 
 
-3. localhost:3000/ 접속
+###3. localhost:3000/ 접속
