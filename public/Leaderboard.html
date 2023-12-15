@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .name {
+                display: inline-block;
+                width: 100px;  /* 적절한 너비로 설정 */
+                text-align: left;
+              }
+        </style>
+    </head>
+    <body>
+        <h1>Leaderboard</h1>
+        <ul id = "leaderboard"></ul>
+        <script>
+            fetch('/leaderboard')
+                .then(response => response.json())
+                .then(data => {
+                    const leaderboard = document.getElementById('leaderboard');
+                    data.forEach(user => {
+                    const listItem = document.createElement('li');
+                    const nameSpan = document.createElement('span');
+                    const scoreSpan = document.createElement('span');
+                    nameSpan.className = 'name';
+                    scoreSpan.className = 'score';
+                    nameSpan.textContent = user.name;
+                    scoreSpan.textContent = user.score;
+                    listItem.appendChild(nameSpan);
+                    listItem.appendChild(document.createTextNode(': '));
+                    listItem.appendChild(scoreSpan);
+                    leaderboard.appendChild(listItem);
+                    });
+                });
+        </script>
+    </body>
+</html>

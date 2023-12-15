@@ -1,0 +1,17 @@
+CREATE USER 'brick'@'localhost' IDENTIFIED BY '12345';
+GRANT ALL PRIVILEGES ON *.* TO 'brick'@'localhost';
+FLUSH PRIVILEGES;
+
+ALTER USER 'brick'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345';
+FLUSH PRIVILEGES;
+
+CREATE DATABASE Brick;
+
+USE brick;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    score INT DEFAULT 0
+);
+
+
